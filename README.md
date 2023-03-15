@@ -5,41 +5,39 @@
 </div>
 
 ![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/npm-v.16.19.1-informational?style=flat&logo=npm&logoColor=white&color=6aa6f8)
+![](https://img.shields.io/badge/npm-v.18.13.0-informational?style=flat&logo=npm&logoColor=white&color=6aa6f8)
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=razetro.discordjs-base-handler)
 
 # 💾 DiscordJS-base-handler
-discordjs-base-handler is a functional, beginner friendly Discord Modular Bot written in JavaScript. The goal is to help beginners gain experience in JavaScript with this Discord Modular Bot.
+DiscordJS-base-handler is a functional, beginner friendly Discord Modular Bot written in JavaScript. This DiscordJS base handler contains **ONLY** slash commands.
 
 # Getting Started
 ### Requirements
-* [**Node.js 16.19.1+**](https://nodejs.org/en/)
-
-#### Example Commands
-```js
-const { Message, Client } = require("discord.js");
-
-module.exports = {
-    name: "test",
-    aliases: ['testing', 't'],
-
-    run: async (client, message, args) => {
-        message.channel.send(`This is a Test Command`);
-    },
-};
-```
+* [**Node.js 18.13.0+**](https://nodejs.org/en/)
 
 #### Example Slash Commands
 ```js
-const { Client, CommandInteraction } = require("discord.js");
+const { SlashCommandBuilder } = require("@discordjs/builders");
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-    name: "test",
-    description: "returns test",
-    type: 'CHAT_INPUT',
+    ...new SlashCommandBuilder()
+        .setName("YOUR_COMMAND_NAME")
+        .setDescription("Type here your description"),
 
-    run: async (client, interaction, args) => {
-        interaction.followUp({ content: `This is a Test Slash Command` });
+    run: async (client, interaction) => {
+        try {
+            return 'YOUR FUNCTION HERE';
+        } catch (e) {
+            console.log(String(e.stack))
+            return interaction.channel.send({embeds: [new EmbedBuilder()
+                .setColor(0xf13737)
+                .setFooter({ text: process.env.APP_NAME, iconURL: client.user.avatarURL(client.user) })
+                .setTimestamp()
+                .setTitle(`❌ ERROR | An error occurred`)
+                .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
+            ]});
+        }
     },
 };
 ```
@@ -49,9 +47,9 @@ module.exports = {
 | ------------- | -----:|
 | supports subfolders | ✅ |
 | Slash Command handler | ✅ |
-| Database Support | ✅ |
-| Command handler | ✅ |
-| Debug System | ❌ |
+| Debug System | ✅ |
+| Database Support | ❌ |
+| Command handler | ❌ |
 
 # 🙏 Thanks to:
 ### 🧑🏻‍🤝‍🧑🏻 Contributors

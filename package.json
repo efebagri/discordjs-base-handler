@@ -1,0 +1,29 @@
+{
+  "name": "discordjs-base-handler",
+  "version": "1.0.0",
+  "description": "© 2023 BindYourServer | All rights reserved.",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node index.js debug",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "SupportBot",
+    "Discord",
+    "nodejs",
+    "npm"
+  ],
+  "author": "Efe Bagri",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/builders": "^1.4.0",
+    "discord-modals": "^1.3.9",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "get-random-emoji": "^1.0.0",
+    "glob": "^8.1.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.3"
+  }
+}

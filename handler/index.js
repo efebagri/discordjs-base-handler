@@ -10,29 +10,29 @@
  */
 
 // Importiere die benötigten Module
-const { glob } = require("glob");
-const { promisify } = require("util");
-
-// Promisify die glob-Methode
-const globPromise = promisify(glob);
+const fs = require("fs");
 
 // Exportiere eine Funktion, die den Client konfiguriert
 module.exports = async (client) => {
     // ———————————————[Events]———————————————
     // Suche nach Event-Dateien und lade sie
-    //const eventFiles = await globPromise(`${process.cwd()}/events/*.js`);
-    const eventFiles = await globPromise(`E:/Customer/KN10002/discordjs-base-handler/events/*.js`);
-    eventFiles.map((value) => require(value));
+    const eventFiles = fs.readdirSync(`${process.cwd()}/events`).filter(file => file.endsWith('.js'));
+    eventFiles.forEach((file) => {
+        require(`${process.cwd()}/events/${file}`);
+    });
 
     // ———————————————[Slash Commands]———————————————
     // Suche nach Slash-Command-Dateien und lade sie
-    const slashCommands = await globPromise(
-        `${process.cwd()}/SlashCommands/*/*.js`
-    );
+    const slashCommands = fs.readdirSync(`${process.cwd()}/SlashCommands`, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory())
+        .flatMap(dirent => fs.readdirSync(`${process.cwd()}/SlashCommands/${dirent.name}`).map(file => ({
+            dir: dirent.name,
+            file
+        })));
 
     const arrayOfSlashCommands = [];
-    slashCommands.map((value) => {
-        const file = require(value);
+    slashCommands.forEach((command) => {
+        const file = require(`${process.cwd()}/SlashCommands/${command.dir}/${command.file}`);
         if (!file?.name) return;
         client.slashCommands.set(file.name, file);
 
@@ -46,12 +46,14 @@ module.exports = async (client) => {
         if (!client.application?.owner) await client.application?.fetch();
 
         const guild = await client.guilds.cache.get(process.env.APP_GUILDID);
-        if (!guild) return console.log("Unable to find guild.");
-
-        // Registriere Befehle in der angegebenen Gilde
-        await guild.commands.set(arrayOfSlashCommands);
-
-        // Alternativ: Registriere Befehle global
-        // await client.application.commands.set(arrayOfSlashCommands);
+        if(!guild) {
+            // Registriere Befehle global
+            await client.application.commands.set(arrayOfSlashCommands);
+            console.log("Unable to find guild. Loading Commands Global");
+        } else {
+            // Registriere Befehle in der angegebenen Gilde
+            await guild.commands.set(client.slashCommands);
+            console.log("Loading Commands on guild: " + process.env.APP_GUILDID);
+        }
     });
 };

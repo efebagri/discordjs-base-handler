@@ -5,7 +5,7 @@
 </div>
 
 ![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/npm-v.16.19.1-informational?style=flat&logo=npm&logoColor=white&color=6aa6f8)
+![](https://img.shields.io/badge/npm-v.18.15.0-informational?style=flat&logo=npm&logoColor=white&color=6aa6f8)
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=razetro.discordjs-base-handler)
 
 # 💾 DiscordJS-base-handler
@@ -13,7 +13,7 @@ discordjs-base-handler is a functional, beginner friendly Discord Modular Bot wr
 
 # Getting Started
 ### Requirements
-* [**Node.js 16.19.1+**](https://nodejs.org/en/)
+* [**Node.js 18.15.0+**](https://nodejs.org/en/)
 
 #### Example Commands
 ```js

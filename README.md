@@ -47,9 +47,17 @@ module.exports = {
 | ------------- | -----:|
 | supports subfolders | ✅ |
 | Slash Command handler | ✅ |
-| Debug System | ✅ |
-| Database Support | ❌ |
-| Command handler | ❌ |
+| Database Support (Coming soon) | ❌ |
+| Command handler (will be removed because of new discord.js version) | ❌ |
+| Debug System (Coming soon) | ❌ |
+
+# 🗃️ Commands
+| Commands        | Description           | Version |
+| ------------- |:-------------:| -----:|
+| ``/ping`` | returns websocket ping | 1.1 |
+| ``/avatar`` | display a users avatar | 1.0 |
+| ``/echo`` | echo your message | 1.0 |
+| ``/clearchat`` | delete your messages | 1.0 |
 
 # 🙏 Thanks to:
 ### 🧑🏻‍🤝‍🧑🏻 Contributors

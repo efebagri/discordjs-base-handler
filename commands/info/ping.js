@@ -1,3 +1,14 @@
+/*
+ * User: efeba
+ * Date/Time: 3/15/23, 3:23 PM
+ * File: ping.js
+ *
+ * Modified: 3/15/23, 3:15 PM
+ *
+ * Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
+ *    All rights Reserved.
+ */
+
 const { Message, Client, MessageEmbed  } = require("discord.js");
 
 module.exports = {

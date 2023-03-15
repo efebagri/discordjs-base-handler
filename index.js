@@ -13,6 +13,9 @@
 const { Client, Collection } = require("discord.js");
 require('dotenv').config();
 
+// Importiere den Updater
+require('./events/updater');
+
 // Erstelle einen Discord-Client
 const client = new Client({
     intents: 32767,

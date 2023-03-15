@@ -14,9 +14,10 @@ const client = require("../index");
 
 // Definiere die verfügbaren Aktivitäten
 const activities = [
-    'Developing',
-    'GitHub: Sloscow',
-    'GitHub: Razetro'
+    'with WebStorm',
+    'with the Code',
+    'with the GitHub Repo',
+    'with the Support Tickets',
 ];
 
 // Wenn der Bot bereit ist, aktualisiere die Aktivität in regelmäßigen Abständen
@@ -25,7 +26,8 @@ client.on("ready", () => {
         const randomIndex = Math.floor(Math.random() * activities.length);
         const newActivity = activities[randomIndex];
         client.user.setActivity(newActivity);
-    }, 60000); // Aktualisiere die Aktivität alle 1 Minute
+    }, 10000); // Aktualisiere die Aktivität alle 10 Sekunden
 
     console.log(`Logged in as ${client.user.tag}! v${process.env.APP_VERSION}`);
+    console.log('—————————————————[ RUBICON ]—————————————————');
 });

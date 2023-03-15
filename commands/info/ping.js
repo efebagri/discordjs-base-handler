@@ -1,21 +1,24 @@
-/*
- * User: efeba
- * Date/Time: 3/15/23, 1:10 PM
- * File: ping.js
- *
- * Modified: 3/15/23, 1:03 PM
- *
- * Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
- *    All rights Reserved.
- */
-
-const { Message, Client } = require("discord.js");
+const { Message, Client, MessageEmbed  } = require("discord.js");
 
 module.exports = {
     name: "ping",
-    aliases: ['p'],
+    description: "returns websocket ping",
+    category: "Info",
+    usage: "",
+    aliases: ['p', 'latency'],
 
     run: async (client, message, args) => {
-        message.channel.send(`${client.ws.ping} ws ping`);
+        const exampleEmbed = new MessageEmbed()
+            .setColor(process.env.WARNING_COLOR)
+            .setTitle('🏓 Pong!')
+            .setDescription(
+                `Latency: ${Math.floor(
+                    message.createdTimestamp - message.createdTimestamp,
+                )}ms\nAPI Latency: ${client.ws.ping}ms`,
+            )
+            .setTimestamp()
+            .setFooter({ text: process.env.APP_NAME, iconURL: client.user.avatarURL(client.user) });
+
+        message.channel.send({ embeds: [exampleEmbed] });
     },
 };

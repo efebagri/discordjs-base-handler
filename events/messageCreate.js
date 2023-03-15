@@ -1,9 +1,9 @@
 /*
  * User: efeba
- * Date/Time: 3/15/23, 1:10 PM
+ * Date/Time: 3/15/23, 3:20 PM
  * File: messageCreate.js
  *
- * Modified: 3/15/23, 1:03 PM
+ * Modified: 3/15/23, 3:15 PM
  *
  * Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
  *    All rights Reserved.
@@ -16,8 +16,7 @@ client.on("messageCreate", async (message) => {
         message.author.bot ||
         !message.guild ||
         !message.content.toLowerCase().startsWith(process.env.APP_PREFIX)
-    )
-        return;
+    )return;
 
     const [cmd, ...args] = message.content
         .slice(process.env.APP_PREFIX.length)

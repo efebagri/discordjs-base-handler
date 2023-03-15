@@ -46,12 +46,14 @@ module.exports = async (client) => {
         if (!client.application?.owner) await client.application?.fetch();
 
         const guild = await client.guilds.cache.get(process.env.APP_GUILDID);
-        if (!guild) return console.log("Unable to find guild.");
-
-        // Registriere Befehle in der angegebenen Gilde
-        await guild.commands.set(arrayOfSlashCommands);
-
-        // Alternativ: Registriere Befehle global
-        // await client.application.commands.set(arrayOfSlashCommands);
+        if(!guild) {
+            // Registriere Befehle global
+            await client.application.commands.set(arrayOfSlashCommands);
+            console.log("Unable to find guild. Loading Commands Global");
+        } else {
+            // Registriere Befehle in der angegebenen Gilde
+            await guild.commands.set(arrayOfSlashCommands);
+            console.log("Loading Commands on guild: " + process.env.APP_GUILDID);
+        }
     });
 };

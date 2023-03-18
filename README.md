@@ -54,6 +54,7 @@ module.exports = {
 # 🗃️ Commands
 | Commands        | Description           | Version |
 | ------------- |:-------------:| -----:|
+| ``/help`` | returns help list | 1.0 |
 | ``/ping`` | returns websocket ping | 1.1 |
 | ``/avatar`` | display a users avatar | 1.0 |
 | ``/echo`` | echo your message | 1.0 |

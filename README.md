@@ -6,7 +6,7 @@
 
 ![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=6aa6f8)
 ![](https://img.shields.io/badge/npm-v.18.13.0-informational?style=flat&logo=npm&logoColor=white&color=6aa6f8)
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=razetro.discordjs-base-handler)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=efebagri.discordjs-base-handler)
 
 # 💾 DiscordJS-base-handler
 DiscordJS-base-handler is a functional, beginner friendly Discord Modular Bot written in JavaScript. This DiscordJS base handler contains **ONLY** slash commands.

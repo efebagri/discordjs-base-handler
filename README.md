@@ -48,7 +48,6 @@ module.exports = {
 | supports subfolders | ✅ |
 | Slash Command handler | ✅ |
 | Database Support | ✅ |
-| Command handler (will be removed because of new discord.js version) | ❌ |
 | Debug System (Coming soon) | ❌ |
 
 # 🗃️ Commands

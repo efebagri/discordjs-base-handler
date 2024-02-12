@@ -1,13 +1,14 @@
 /*
- * User: efeba
- * Date/Time: 3/15/23, 9:15 PM
+ * User: efebagri
+ * Date/Time: 2/12/24, 2:59 AM
  * File: updater.js
  *
- * Modified: 3/15/23, 9:14 PM
+ * Modified: 1/9/24, 2:40 PM
  *
- * Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
+ * Copyright (c) 2023-2024 Exbil (https://www.exbil.net/)
  *    All rights Reserved.
  */
+
 const https = require('https');
 const figlet = require('figlet');
 
@@ -21,7 +22,7 @@ const options = {
 function checkForUpdates() {
     figlet('RubiCord', function(err, data) {
         if (err) {
-            console.log('Fehler beim Erstellen von ASCII-Art:', err);
+            console.log('Error when creating ASCII Art:', err);
             return;
         }
         console.log(data);

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #
-# User: efeba
-# Date/Time: 3/15/23, 4:44 PM
+# User: efebagri
+# Date/Time: 2/12/24, 2:57 AM
 # File: start.sh
 #
-# Modified: 3/3/23, 8:11 PM
+# Modified: 1/9/24, 2:40 PM
 #
-# Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
+# Copyright (c) 2023-2024 Exbil (https://www.exbil.net/)
 #    All rights Reserved.
 #
 

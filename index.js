@@ -1,11 +1,11 @@
 /*
- * User: efeba
- * Date/Time: 3/15/23, 4:44 PM
+ * User: efebagri
+ * Date/Time: 2/12/24, 2:55 AM
  * File: index.js
  *
- * Modified: 3/3/23, 8:34 PM
+ * Modified: 1/9/24, 2:40 PM
  *
- * Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
+ * Copyright (c) 2024 Exbil (https://www.exbil.net/)
  *    All rights Reserved.
  */
 
@@ -29,7 +29,8 @@ client.commands = new Collection();
 client.slashCommands = new Collection();
 
 // Importiere die Befehle und die Slash-Befehle
-require("./handler")(client);
+require("./handler/command_event")(client);
+require("./handler/mongoose")(client)
 
 // Melde den Client bei Discord an
 client.login(process.env.TOKEN);

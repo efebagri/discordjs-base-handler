@@ -1,6 +1,6 @@
 @echo off
 cls
-title SlosBot Discord Bot by Sloscow
+title Discord Bot by Efe Bagri
 echo (%time%) Bot starting...
 node .
 PAUSE

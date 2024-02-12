@@ -1,7 +1,7 @@
 {
   "name": "discordjs-base-handler",
-  "version": "2.1.0",
-  "description": "© 2023 BindYourServer | All rights reserved.",
+  "version": "2.2.0",
+  "description": "© 2003 - 2024 Exbil | All rights reserved.",
   "main": "index.js",
   "scripts": {
     "debug": "node index.js debug",
@@ -24,6 +24,7 @@
     "fs": "^0.0.1-security",
     "get-random-emoji": "^1.0.0",
     "glob": "^8.1.0",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "mongoose": "^8.0.3"
   }
 }

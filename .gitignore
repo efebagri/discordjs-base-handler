@@ -15,4 +15,9 @@ npm-debug.log
 yarn-error.log
 /.fleet
 /.idea
+<<<<<<< HEAD
 /.vscode
+=======
+/.vscode
+/package-lock.json
+>>>>>>> eebbd9c (commit initial set of communities)

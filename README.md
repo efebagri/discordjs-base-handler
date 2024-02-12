@@ -52,19 +52,23 @@ module.exports = {
 | Debug System (Coming soon) | ❌ |
 
 # 🗃️ Commands
-| Commands        | Description           | Version |
-| ------------- |:-------------:| -----:|
-| ``/help`` | returns help list | 1.0 |
-| ``/ping`` | returns websocket ping | 1.1 |
-| ``/avatar`` | display a users avatar | 1.0 |
-| ``/echo`` | echo your message | 1.0 |
+| Commands       | Description           | Version |
+|----------------|:-------------:| -----:|
+| ``/help``      | returns help list | 1.0 |
+| ``/ping``      | returns websocket ping | 1.1 |
+| ``/avatar``    | display a users avatar | 1.0 |
+| ``/echo``      | echo your message | 1.0 |
 | ``/clearchat`` | delete your messages | 1.0 |
+| ``/balance``   | Check your balance | 1.0 |
+| ``/work``      | Do some work to earn money | 1.0 |
 
 # 🙏 Thanks to:
 ### 🧑🏻‍🤝‍🧑🏻 Contributors
 * Sloscow
+* SVNKVN9
 
 ### 🚧 Used Open-Source projects
 * [discordjs/discord.js](https://github.com/discordjs/discord.js)
 * [npmjs/dotenv](https://www.npmjs.com/package/dotenv)
 * [npmjs/glob](https://www.npmjs.com/package/glob)
+* [npmjs/mongoose](https://www.npmjs.com/package/mongoose)

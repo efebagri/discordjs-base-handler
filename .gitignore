@@ -1,23 +1,38 @@
+### 1. Node and NPM / Yarn
 /node_modules
+npm-debug.log
+yarn.lock
+yarn-error.log
+/package-lock.json
+
+### 2. Public Assets and Build Files
 /public/build
 /public/hot
 /public/storage
+
+### 3. Storage Files and Keys
 /storage/*.key
+
+### 4. Vendor Files
 /vendor
+
+### 5. Environment and Configuration Files
 .env
 .env.backup
 .env.production
-.phpunit.result.cache
 Homestead.json
 Homestead.yaml
 auth.json
-npm-debug.log
-yarn-error.log
+
+### 6. PHP-related Files
+.phpunit.result.cache
+
+### 7. Editor and IDE Configuration Files
 /.fleet
 /.idea
+/.vscode
+
+### 8. Version Control Conflicts and Temporary Files
 <<<<<<< HEAD
-/.vscode
 =======
-/.vscode
-/package-lock.json
 >>>>>>> eebbd9c (commit initial set of communities)

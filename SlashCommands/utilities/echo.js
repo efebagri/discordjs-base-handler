@@ -1,24 +1,3 @@
-/*
-<<<<<<< HEAD
- * User: efeba
- * Date/Time: 3/15/23, 4:44 PM
- * File: echo.js
- *
- * Modified: 3/3/23, 8:11 PM
- *
- * Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
-=======
- * User: efebagri
- * Date/Time: 2/12/24, 2:58 AM
- * File: echo.js
- *
- * Modified: 1/9/24, 2:40 PM
- *
- * Copyright (c) 2023-2024 Exbil (https://www.exbil.net/)
->>>>>>> eebbd9c (commit initial set of communities)
- *    All rights Reserved.
- */
-
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { EmbedBuilder } = require("discord.js");
 
@@ -63,8 +42,4 @@ module.exports = {
             ]});
         }
     },
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> eebbd9c (commit initial set of communities)

@@ -1,7 +1,7 @@
 {
   "name": "discordjs-base-handler",
   "version": "2.2.0",
-  "description": "© 2003 - 2025 Exbil | All rights reserved.",
+  "description": "Copyright © 2003 - 2025 Exbil Hosting & Software Solutions | All rights reserved.",
   "main": "index.js",
   "scripts": {
     "debug": "node index.js debug",
@@ -13,7 +13,17 @@
     "nodejs",
     "npm"
   ],
-  "author": "Efe Bagri",
+  "authors": [
+    {
+      "name": "Efe Bağrı",
+      "email": "composer@exbil.net",
+      "homepage": "https://exbil.net"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/efebagri/discordjs-base-handler/issues",
+    "source": "https://github.com/efebagri/discordjs-base-handler"
+  },
   "license": "MIT",
   "dependencies": {
     "@discordjs/builders": "^1.5.0",

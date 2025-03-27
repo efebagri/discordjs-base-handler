@@ -1,14 +1,3 @@
-/*
- * User: efebagri
- * Date/Time: 2/12/24, 2:58 AM
- * File: ping.js
- *
- * Modified: 1/9/24, 2:40 PM
- *
- * Copyright (c) 2023-2024 Exbil (https://www.exbil.net/)
- *    All rights Reserved.
- */
-
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { EmbedBuilder } = require("discord.js");
 

@@ -1,14 +1,3 @@
-/*
- * User: efeba
- * Date/Time: 3/15/23, 4:44 PM
- * File: clearchat.js
- *
- * Modified: 3/3/23, 8:11 PM
- *
- * Copyright (c) 2023 BindYourServer (https://bindyourserver.com)
- *    All rights Reserved.
- */
-
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { EmbedBuilder } = require('discord.js');
 

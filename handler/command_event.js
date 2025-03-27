@@ -1,29 +1,18 @@
-/*
- * User: efebagri
- * Date/Time: 2/12/24, 2:58 AM
- * File: command_event.js
- *
- * Modified: 1/9/24, 2:40 PM
- *
- * Copyright (c) 2023-2024 Exbil (https://www.exbil.net/)
- *    All rights Reserved.
- */
-
-// Importiere die benötigten Module
+// Import the required modules
 const fs = require("fs");
 
-// Exportiere eine Funktion, die den Client konfiguriert
+// Export a function to configure the client
 module.exports = async (client) => {
     // ———————————————[Events]———————————————
-    // Suche nach Event-Dateien und lade sie
+    // Search for event files and load them
     const eventFiles = fs.readdirSync(`${process.cwd()}/events`).filter(file => file.endsWith('.js'));
     eventFiles.forEach((file) => {
         require(`${process.cwd()}/events/${file}`);
     });
 
     // ———————————————[Slash Commands]———————————————
-    // Suche nach Slash-Command-Dateien und lade sie
-    const slashCommands = fs.readdirSync(`${process.cwd()}/SlashCommands`, { withFileTypes: true })
+    // Search for slash command files and load them
+    const slashCommands = fs.readdirSync(`${process.cwd()}/SlashCommands`, {withFileTypes: true})
         .filter(dirent => dirent.isDirectory())
         .flatMap(dirent => fs.readdirSync(`${process.cwd()}/SlashCommands/${dirent.name}`).map(file => ({
             dir: dirent.name,
@@ -40,18 +29,18 @@ module.exports = async (client) => {
         arrayOfSlashCommands.push(file);
     });
 
-    // Registriere Slash-Befehle, wenn der Bot bereit ist
+    // Register slash commands when the bot is ready
     client.on("ready", async () => {
-        // Stelle sicher, dass der Bot die APPLICATION_COMMANDS Berechtigung hat
+        // Ensure the bot has the APPLICATION_COMMANDS permission
         if (!client.application?.owner) await client.application?.fetch();
 
         const guild = await client.guilds.cache.get(process.env.APP_GUILDID);
-        if(!guild) {
-            // Registriere Befehle global
+        if (!guild) {
+            // Register commands globally
             await client.application.commands.set(arrayOfSlashCommands);
             console.log("Unable to find guild. Loading Commands Global");
         } else {
-            // Registriere Befehle in der angegebenen Gilde
+            // Register commands in the specified guild
             await guild.commands.set(client.slashCommands);
             console.log("Loading Commands on guild: " + process.env.APP_GUILDID);
         }
